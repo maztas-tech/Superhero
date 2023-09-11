@@ -12,15 +12,15 @@ public class Database {
         this.superheroes = new Superhero[6];
     }
     //First method - with superhero name.
-    public void addSuperheroWithName(String name, String realName, String superPower,
+    public void addSuperheroWithName(String name, String realName, String superPower, String isHuman,
                         int yearCreated, int strength){
-        superheroes[count++] = new Superhero(name, realName, superPower, yearCreated, strength);
+        superheroes[count++] = new Superhero(name, realName, superPower, isHuman, yearCreated,  strength);
     }
 
     //Second method without superhero name.
-    public void addSuperheroWithoutName(String realName, String superPower,
+    public void addSuperheroWithoutName(String realName, String superPower, String isHuman,
                                         int yearCreated, int strength){
-        superheroes[count++] = new Superhero(realName, superPower, yearCreated, strength);
+        superheroes[count++] = new Superhero(realName, superPower, isHuman, yearCreated,  strength);
     }
 
     @Override
