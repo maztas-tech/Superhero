@@ -1,5 +1,7 @@
 package information;
 
+import java.util.Arrays;
+
 public class Database {
     //Fields
     private Superhero[] superheroes;
@@ -19,5 +21,13 @@ public class Database {
     public void addSuperheroWithoutName(String realName, String superPower,
                                         int yearCreated, int strength){
         superheroes[count++] = new Superhero(realName, superPower, yearCreated, strength);
+    }
+
+    @Override
+    public String toString() {
+        return "Database{" +
+                "superheroes=" + Arrays.toString(superheroes) +
+                ", count=" + count +
+                '}';
     }
 }
