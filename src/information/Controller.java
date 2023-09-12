@@ -1,5 +1,7 @@
 package information;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Controller
 {
@@ -23,7 +25,9 @@ public class Controller
     }
 
     //Receive all superheroes
-    public ArrayList<Superhero> receiveSuperheroes(){
+    public ArrayList<Superhero> receiveSuperheroes()
+    {
+        superheroes.removeIf(Objects::isNull);
         return db.recieveSuperheroes();
     }
 

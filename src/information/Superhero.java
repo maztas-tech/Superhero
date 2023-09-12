@@ -30,34 +30,44 @@ public class Superhero {
     }
 
     //Getter
-    public String getName(){
+    public String getName()
+    {
         return name;
+
     }
-    public String getRealName(){
+    public String getRealName()
+    {
         return realName;
+
     }
 
-    public String getSuperPower(){
+    public String getSuperPower()
+    {
         return superPower;
     }
 
-    public String getIsHuman(){
+    public String getIsHuman()
+    {
         return isHuman;
     }
-    public int getYearCreated(){
+    public int getYearCreated()
+    {
         return yearCreated;
     }
 
-    public int getStrength(){
+    public int getStrength()
+    {
         return strength;
     }
 
 
     //Setter
-    public void setRealName(String realName){
+    public void setRealName(String realName)
+    {
         this.realName = realName;
     }
-    public void setName(String name){
+    public void setName(String name)
+    {
         this.name = name;
     }
     public void setStrength(int strength){

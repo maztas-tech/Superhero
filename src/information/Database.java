@@ -1,33 +1,44 @@
 package information;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Objects;
 
-public class Database {
+public class Database
+{
     //Fields
-    private Superhero[] superheroes;
-    int count = 0;
+    private ArrayList<Superhero> superheroes = new ArrayList<Superhero>();
 
-    //Constructor
-    public Database(){
-        this.superheroes = new Superhero[6];
-    }
+    //Methods
     //First method with superhero name.
     public void addSuperheroWithName(String name, String realName, String superPower, String isHuman,
-                        int yearCreated, int strength){
-        superheroes[count++] = new Superhero(name, realName, superPower, isHuman, yearCreated,  strength);
+                                     int yearCreated, int strength)
+    {
+        superheroes.add(new Superhero(name, realName, superPower, isHuman, yearCreated, strength));
     }
 
     //Second method without superhero name.
     public void addSuperheroWithoutName(String realName, String superPower, String isHuman,
-                                        int yearCreated, int strength){
-        superheroes[count++] = new Superhero(realName, superPower, isHuman, yearCreated,  strength);
+                                        int yearCreated, int strength)
+    {
+        superheroes.add(new Superhero(realName, superPower, isHuman, yearCreated, strength));
+        superheroes.removeIf(Objects::isNull);
     }
 
-    @Override
-    public String toString() {
-        return "Database{" +
-                "superheroes=" + Arrays.toString(superheroes) +
-                ", count=" + count +
-                '}';
+    public ArrayList<Superhero> recieveSuperheroes()
+    {
+        return superheroes;
+    }
+
+    public Superhero findSuperhero(String name)
+    {
+        //Find a hero if their name matches search criteria
+        for (Superhero superhero: superheroes)
+        {
+            if(superhero.getName().equals(name))
+            {
+                return superhero;
+            }
+        }
+        return null;
     }
 }
