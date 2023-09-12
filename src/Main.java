@@ -38,7 +38,7 @@ public class Main {
                     strength = readInt(keyboard);
 
                     superhero.addSuperheroWithName(name, realName, superPower,
-                            isHuman, yearCreated,  strength);
+                            isHuman, yearCreated, strength);
 
                     System.out.println(superhero);
                 } else if (proceed == 'N' || proceed == 'n') {

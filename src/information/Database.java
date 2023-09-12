@@ -11,7 +11,7 @@ public class Database {
     public Database(){
         this.superheroes = new Superhero[6];
     }
-    //First method - with superhero name.
+    //First method with superhero name.
     public void addSuperheroWithName(String name, String realName, String superPower, String isHuman,
                         int yearCreated, int strength){
         superheroes[count++] = new Superhero(name, realName, superPower, isHuman, yearCreated,  strength);

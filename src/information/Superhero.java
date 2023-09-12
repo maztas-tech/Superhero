@@ -8,7 +8,7 @@ public class Superhero {
     final private String isHuman;
     private int strength;
 
-    //Constructor - with superhero name
+    //Constructor with superhero name
     public Superhero(String name, String realName, String superPower, String isHuman,
                      int yearCreated, int strength){
         this.name = name;
@@ -19,7 +19,7 @@ public class Superhero {
         this.strength = strength;
     }
 
-    //Constructor - without superhero name
+    //Constructor without superhero name
     public Superhero(String realName, String superPower, String isHuman, int yearCreated,
                       int strength){
         this.realName = realName;
