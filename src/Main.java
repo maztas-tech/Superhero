@@ -4,8 +4,6 @@ import information.Database;
 import java.util.Scanner;
 
 public class Main {
-
-
     public static void main(String[] args) {
         //Objects
         Database db = new Database();
@@ -80,7 +78,10 @@ public class Main {
             }
             else if(userDecision == 3)
             {
-                System.out.println("Empty for now");
+                String find;
+                System.out.println("Which superhero are you looking for? ");
+                find = input.nextLine();
+                controller.findSuperhero(find);
             }
             else if(userDecision == 9)
             {

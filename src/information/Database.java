@@ -1,7 +1,5 @@
 package information;
-
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Database
 {
@@ -21,7 +19,6 @@ public class Database
                                         int yearCreated, int strength)
     {
         superheroes.add(new Superhero(realName, superPower, isHuman, yearCreated, strength));
-        superheroes.removeIf(Objects::isNull);
     }
 
     public ArrayList<Superhero> recieveSuperheroes()
@@ -29,16 +26,16 @@ public class Database
         return superheroes;
     }
 
-    public Superhero findSuperhero(String name)
+    public Superhero searchSuperhero(String name)
     {
         //Find a hero if their name matches search criteria
         for (Superhero superhero: superheroes)
         {
-            if(superhero.getName().equals(name))
+            if(superhero.getRealName().contains(name) || superhero.getName().contains(name))
             {
-                return superhero;
+                System.out.println(superhero);
             }
-        }
-        return null;
+        } return null;
+
     }
 }

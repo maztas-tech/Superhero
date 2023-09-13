@@ -78,7 +78,7 @@ public class Superhero {
 
     @Override
     public String toString() {
-        return "Superhero{" +
+        return
                 "name='" + name + '\'' +
                 ", realName='" + realName + '\'' +
                 ", superPower='" + superPower + '\'' +
