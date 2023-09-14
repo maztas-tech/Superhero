@@ -1,5 +1,4 @@
 package information;
-
 import java.util.Scanner;
 
 public class UserInterface {

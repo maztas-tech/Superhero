@@ -1,7 +1,7 @@
 package information;
 public class Superhero {
     //Fields
-    private String name;
+    private String secretIdentity;
     private String realName;
     final private String superPower;
     final private int yearCreated;
@@ -9,9 +9,9 @@ public class Superhero {
     private int strength;
 
     //Constructor with superhero name
-    public Superhero(String name, String realName, String superPower, String isHuman,
+    public Superhero(String secretIdentity, String realName, String superPower, String isHuman,
                      int yearCreated, int strength){
-        this.name = name;
+        this.secretIdentity = secretIdentity;
         this.realName = realName;
         this.superPower = superPower;
         this.isHuman = isHuman;
@@ -30,9 +30,9 @@ public class Superhero {
     }
 
     //Getter
-    public String getName()
+    public String getSecretIdentity()
     {
-        return name;
+        return secretIdentity;
 
     }
     public String getRealName()
@@ -66,9 +66,9 @@ public class Superhero {
     {
         this.realName = realName;
     }
-    public void setName(String name)
+    public void setSecretIdentity(String secretIdentity)
     {
-        this.name = name;
+        this.secretIdentity = secretIdentity;
     }
     public void setStrength(int strength){
         if(strength <= 10000){
@@ -80,7 +80,7 @@ public class Superhero {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("\nName: ");
-        stringBuilder.append(name);
+        stringBuilder.append(secretIdentity);
         stringBuilder.append("\nReal name: ");
         stringBuilder.append(realName);
 

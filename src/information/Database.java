@@ -31,7 +31,7 @@ public class Database
         //Find a hero if their name matches search criteria
         for (Superhero superhero: superheroes)
         {
-            if(superhero.getRealName().contains(name) || superhero.getName().contains(name))
+            if(superhero.getRealName().contains(name) || superhero.getSecretIdentity().contains(name))
             {
                 System.out.println(superhero);
             }
