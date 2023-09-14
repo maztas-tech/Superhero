@@ -6,9 +6,8 @@ public class Controller
     private Database db;
     private ArrayList<Superhero> superheroes = new ArrayList<Superhero>();
 
-    public Controller(Database db)
-    {
-        this.db = db;
+    public Controller() {
+        db = new Database();
     }
 
     //Add a superhero with a secret identity

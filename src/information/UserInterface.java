@@ -4,8 +4,7 @@ import java.util.Scanner;
 public class UserInterface {
 
     public void startProgram(){
-        Database db = new Database();
-        Controller controller = new Controller(db);
+        Controller controller = new Controller();
 
         //Variables
         int userDecision = 0;
@@ -89,6 +88,18 @@ public class UserInterface {
             }
         }
     }
+
+    public static void addSuperhero(){
+        System.out.println("Add superhero");
+    }
+
+    public static void showSuperheroes(){
+        System.out.println("Show superheroes");
+    }
+    public static void searchSuperhero(){
+        System.out.println("Search for superhero");
+    }
+
     public static int readInt(Scanner input) {
         boolean validInput = false;
         int valueToReturn = 0;
