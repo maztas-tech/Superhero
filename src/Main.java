@@ -21,8 +21,6 @@ public class Main {
         //Scanner
         Scanner input = new Scanner(System.in);
 
-
-
         while(userDecision != 9)
         {
             System.out.println("""
@@ -92,61 +90,6 @@ public class Main {
                 System.exit(0);
             }
         }
-
-       /* for (int i = 0; i <= 6; i++) {
-            if (valg == 1) {
-                String name;
-                String realName;
-                String superPower;
-                int yearCreated;
-                int strength;
-                String isHuman;
-                System.out.print("Har du et identitet? Y/N: ");
-                proceed = input.nextLine().charAt(0);
-                if (proceed == 'Y' || proceed == 'y') {
-                    System.out.print("Dit identitet: ");
-                    name = input.nextLine();
-                    System.out.print("Sande identitet: ");
-                    realName = input.nextLine();
-                    System.out.print("Dine superkræfter: ");
-                    superPower = input.nextLine();
-                    System.out.print("Er du et menneske? Y/N: ");
-                    isHuman = input.nextLine();
-
-                    System.out.print("Årstal du blev født: ");
-                    yearCreated = readInt(input);
-                    System.out.print("Dine stats: ");
-                    strength = readInt(input);
-
-                    superhero.addSuperheroWithName(name, realName, superPower,
-                            isHuman, yearCreated, strength);
-
-                    System.out.println(superhero);
-                } else if (proceed == 'N' || proceed == 'n') {
-                    System.out.print("Sande identitet: ");
-                    realName = input.nextLine();
-                    System.out.print("Dine superkræfter: ");
-                    superPower = input.nextLine();
-                    System.out.println("Er du et menneske: ");
-                    isHuman = input.nextLine();
-
-                    System.out.print("Årstal du blev født: ");
-                    yearCreated = readInt(input);
-                    System.out.print("Dine stats: ");
-                    strength = readInt(input);
-
-                    superhero.addSuperheroWithoutName(realName, superPower,
-                            isHuman, yearCreated,  strength);
-
-                    System.out.println(superhero);
-                }
-
-            } else if (valg == 9){
-                System.out.println("No options have been picked");
-                System.exit(0);
-            }
-
-        }*/
 
 
     }
