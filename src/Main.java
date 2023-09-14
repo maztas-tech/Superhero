@@ -25,12 +25,14 @@ public class Main {
 
         while(userDecision != 9)
         {
-            System.out.println("Velkommen til SUPERHERO UNIVERSET");
-            System.out.println("1. Opret superhelt ");
-            System.out.println("2. Vis superhelte ");
-            System.out.println("3. Find superhelt ");
-            System.out.println("9. Afslut ");
-
+            System.out.println("""
+                    Velkommen til SUPERHERO UNIVERSET
+                
+                    1. Opret superhelt
+                    2. Vis superhelte
+                    3. Find superhelt
+                    9. Afslut
+                    """);
             userDecision = readInt(input);
             if(userDecision == 1)
             {
