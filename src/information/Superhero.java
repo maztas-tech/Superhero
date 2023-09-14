@@ -78,13 +78,13 @@ public class Superhero {
 
     @Override
     public String toString() {
-        return
-                "name='" + name + '\'' +
-                ", realName='" + realName + '\'' +
-                ", superPower='" + superPower + '\'' +
-                ", yearCreated=" + yearCreated +
-                ", isHuman=" + isHuman +
-                ", strength=" + strength +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("\nName: ");
+        stringBuilder.append(name);
+        stringBuilder.append("\nReal name: ");
+        stringBuilder.append(realName);
+
+        return stringBuilder.toString();
+
     }
 }
