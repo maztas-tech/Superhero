@@ -1,6 +1,7 @@
 package information;
 public class Superhero {
     //Fields
+    //final private int index;
     private String secretIdentity;
     private String realName;
     final private String superPower;

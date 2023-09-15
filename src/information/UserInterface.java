@@ -2,7 +2,7 @@ package information;
 import java.util.Scanner;
 
 public class UserInterface {
-
+    //User interface must NOT have access or association to Database.
     public void startProgram(){
         Controller controller = new Controller();
 
@@ -26,6 +26,7 @@ public class UserInterface {
                     1. Opret superhelt
                     2. Vis superhelte
                     3. Find superhelt
+                    4. Rediger superhelt
                     9. Afslut
                     """);
             userDecision = readInt(input);
@@ -72,6 +73,7 @@ public class UserInterface {
             else if(userDecision == 2)
             {
                 System.out.println(controller.receiveSuperheroes());
+                input.nextLine();
             }
             else if(userDecision == 3)
             {
@@ -79,6 +81,10 @@ public class UserInterface {
                 System.out.println("Which superhero are you looking for? ");
                 find = input.nextLine();
                 controller.findSuperhero(find);
+            }
+            else if(userDecision == 4)
+            {
+                System.out.println("Rediger superhelt skal være here!");
             }
             else if(userDecision == 9)
             {
@@ -89,7 +95,7 @@ public class UserInterface {
         }
     }
 
-    public static void addSuperhero(){
+/*    public static void addSuperhero(){
         System.out.println("Add superhero");
     }
 
@@ -98,7 +104,7 @@ public class UserInterface {
     }
     public static void searchSuperhero(){
         System.out.println("Search for superhero");
-    }
+    }*/
 
     public static int readInt(Scanner input) {
         boolean validInput = false;
@@ -110,7 +116,7 @@ public class UserInterface {
                 valueToReturn = Integer.parseInt(userInput);
                 validInput = true;
             } catch (Exception e) {
-                System.out.println("Invalid int value");
+                System.out.println("You must use an integer!");
             }
         }
         return valueToReturn;

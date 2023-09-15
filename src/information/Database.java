@@ -39,4 +39,8 @@ public class Database
 
     }
 
+    public void editSuperhero(){
+
+    }
+
 }
