@@ -1,90 +1,73 @@
 package information;
+
 public class Superhero {
-    //Fields
-    private String name;
-    private String realName;
-    final private String superPower;
-    final private int yearCreated;
-    final private String isHuman;
+    private String secretIdentity;
+    private String trueIdentity;
+    private String superpower;
+    private int yearCreated;
+    private String isHuman;
     private int strength;
 
-    //Constructor with superhero name
-    public Superhero(String name, String realName, String superPower, String isHuman,
-                     int yearCreated, int strength){
-        this.name = name;
-        this.realName = realName;
-        this.superPower = superPower;
-        this.isHuman = isHuman;
+    //Constructor that creates superhero objects.
+    public Superhero(String secretIdentity, String trueIdentity, String superpower,
+                     int yearCreated, String isHuman, int strength){
+        this.secretIdentity = secretIdentity;
+        this.trueIdentity = trueIdentity;
+        this.superpower = superpower;
         this.yearCreated = yearCreated;
-        this.strength = strength;
-    }
-
-    //Constructor without superhero name
-    public Superhero(String realName, String superPower, String isHuman, int yearCreated,
-                      int strength){
-        this.realName = realName;
-        this.superPower = superPower;
         this.isHuman = isHuman;
-        this.yearCreated = yearCreated;
         this.strength = strength;
     }
 
     //Getter
-    public String getName()
-    {
-        return name;
-
-    }
-    public String getRealName()
-    {
-        return realName;
-
+    public String getSecretIdentity(){
+        return secretIdentity;
     }
 
-    public String getSuperPower()
-    {
-        return superPower;
+    public String getTrueIdentity(){
+        return trueIdentity;
     }
 
-    public String getIsHuman()
-    {
-        return isHuman;
+    public String getSuperpower(){
+        return superpower;
     }
-    public int getYearCreated()
-    {
+
+    public int getYearCreated(){
         return yearCreated;
     }
 
-    public int getStrength()
-    {
+    public int getStrength(){
         return strength;
     }
 
-
     //Setter
-    public void setRealName(String realName)
-    {
-        this.realName = realName;
+    public void setSecretIdentity(String secretIdentity){
+        this.secretIdentity = secretIdentity;
     }
-    public void setName(String name)
-    {
-        this.name = name;
+    public void setTrueIdentity(String trueIdentity){
+        this.trueIdentity = trueIdentity;
     }
-    public void setStrength(int strength){
-        if(strength <= 10000){
-            this.strength = strength;
-        }
+    public void setStrength (int strength){
+        this.strength = strength;
     }
 
     @Override
     public String toString() {
-        return
-                "name='" + name + '\'' +
-                ", realName='" + realName + '\'' +
-                ", superPower='" + superPower + '\'' +
-                ", yearCreated=" + yearCreated +
-                ", isHuman=" + isHuman +
-                ", strength=" + strength +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("\nListe af superhelte ");
+        stringBuilder.append("\nSecret identity: ");
+        stringBuilder.append("\u001B[32m" + secretIdentity + "\u001B[0m");
+        stringBuilder.append("\nTrue identity: ");
+        stringBuilder.append("\u001B[32m" + trueIdentity + "\u001B[0m");
+        stringBuilder.append("\nSuperpower(s): ");
+        stringBuilder.append("\u001B[32m" + superpower + "\u001B[0m");
+        stringBuilder.append("\nDate of birth: ");
+        stringBuilder.append("\u001B[32m" + yearCreated + "\u001B[0m");
+        stringBuilder.append("\nHuman: ");
+        stringBuilder.append("\u001B[32m" + isHuman + "\u001B[0m");
+        stringBuilder.append("\nStrength: ");
+        stringBuilder.append("\u001B[32m" + strength + "\u001B[0m" +"\n");
+
+        return stringBuilder.toString();
     }
 }
