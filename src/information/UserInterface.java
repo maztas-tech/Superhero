@@ -14,23 +14,17 @@ public class UserInterface {
         Controller controller = new Controller();
         Scanner input = new Scanner(System.in);
 
-        controller.addSuperhero("Batman", "Bruce Wayne", "Money",
-                1943, "YES", 100);
-        controller.addSuperhero("Superman", "Klark Kent", "Flying",
-                1949, "No", 300);
-        controller.addSuperhero("The Flash", "Barry Allen", "Speed",
-                1970, "No", 250);
 
         int option = 0;
         do {
             System.out.println("""
-                    Velkommen til superhelte universet!
+                    Welcome to the hero universe!!
                     
-                    1. Opret superhelt
-                    2. Vis superhelte
-                    3. Find superhelt
-                    4. Rediger superhelt 
-                    9. Afslut programmet
+                    1. Create superhero
+                    2. Show superhero
+                    3. Find superhero
+                    4. Update superhero 
+                    9. Close the program
                     """);
             try {
                 option = input.nextInt();
@@ -87,7 +81,11 @@ public class UserInterface {
                     break;
 
                 case 4:
-                    controller.editSuperhero();
+                    String name;
+                    System.out.println("Please enter the name of the superhero in the database in order to change it! ");
+                    name = input.nextLine();
+                    controller.editSuperhero(name, input);
+                    break;
 
                 default:
                     System.out.println("Ugyldigt valg. Prøv igen.");

@@ -1,6 +1,7 @@
 package information;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Controller {
     private Database db;
@@ -26,7 +27,7 @@ public class Controller {
         return db.searchSuperhero(name);
     }
 
-    public void editSuperhero(){
-        db.editSuperhero();
+    public void editSuperhero(String name, Scanner input){
+        db.editSuperhero(name, input);
     }
 }
