@@ -29,7 +29,16 @@ public class Database {
         return null;
     }
     //Update values in list - crUd
-    public void editSuperhero(String name, Scanner input){
+    public void editSuperhero(String secretIdentity, String newSecretIdentity, String newTrueIdentity, int newStrength){
+        for (Superhero superhero: superheroes) {
+            if (superhero.getSecretIdentity().contains(secretIdentity)){
+                superhero.setSecretIdentity(newSecretIdentity);
+                superhero.setTrueIdentity(newTrueIdentity);
+                superhero.setStrength(newStrength);
+            }
+        }
+    }
+    /*public void editSuperhero(String name, Scanner input){
         for (Superhero superhero: superheroes) {
             if (superhero.getSecretIdentity().contains(name)){
                 System.out.print("Please type in the new secret identity: ");
@@ -52,5 +61,15 @@ public class Database {
                 superhero.setStrength(newStrength);
             }
         }
+    }*/
+    //Remove supperhero - cruD
+    public void removeSuperhero(String secretIdentity){
+        Superhero found = null;
+        for (Superhero superhero: superheroes) {
+            if (superhero.getSecretIdentity().contains(secretIdentity)){
+                found = superhero;
+            }
+        }
+        if (found != null) superheroes.remove(found);
     }
 }

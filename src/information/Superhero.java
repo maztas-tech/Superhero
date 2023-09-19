@@ -18,6 +18,10 @@ public class Superhero {
         this.isHuman = isHuman;
         this.strength = strength;
     }
+    //Empty constructor
+    public Superhero(){
+
+    }
 
     //Getter
     public String getSecretIdentity(){

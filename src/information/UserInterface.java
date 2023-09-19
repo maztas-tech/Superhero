@@ -14,6 +14,12 @@ public class UserInterface {
         Controller controller = new Controller();
         Scanner input = new Scanner(System.in);
 
+        controller.addSuperhero("Superman", "Klark Kent", "Flying",
+                1940, "No", 400);
+        controller.addSuperhero("Batman", "Bruce Wayne", "Money",
+                1945, "Yes", 200);
+
+
 
         int option = 0;
         do {
@@ -24,6 +30,7 @@ public class UserInterface {
                     2. Show superhero
                     3. Find superhero
                     4. Update superhero 
+                    5. Delete superhero
                     9. Close the program
                     """);
             try {
@@ -81,12 +88,31 @@ public class UserInterface {
                     break;
 
                 case 4:
-                    String name;
                     System.out.println("Please enter the name of the superhero in the database in order to change it! ");
-                    name = input.nextLine();
-                    controller.editSuperhero(name, input);
+                    secretIdentity = input.nextLine();
+                    System.out.print("Please type in the new secret identity: ");
+                    String newSecretIdentity;
+                    newSecretIdentity = input.nextLine();
+                    System.out.println("New secret identity has been implemented!");
+
+                    System.out.print("Please type in the new real identity: ");
+                    String newTrueIdentity;
+                    newTrueIdentity = input.nextLine();
+                    System.out.println("New true identity has been implemented!");
+
+                    System.out.print("Please type in the new strength value: ");
+                    int newStrength;
+                    newStrength = input.nextInt();
+                    System.out.println("New strength has been implemented!");
+
+                    controller.editSuperhero(secretIdentity, newSecretIdentity, newTrueIdentity, newStrength);
                     break;
 
+                case 5:
+                    System.out.println("Please enter the name: ");
+                    secretIdentity = input.nextLine();
+                    controller.removeSuperhero(secretIdentity);
+                    System.out.println("Superhero has been removed");
                 default:
                     System.out.println("Ugyldigt valg. Prøv igen.");
             }

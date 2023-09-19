@@ -27,7 +27,11 @@ public class Controller {
         return db.searchSuperhero(name);
     }
 
-    public void editSuperhero(String name, Scanner input){
-        db.editSuperhero(name, input);
+    public void editSuperhero(String secretIdentity, String newSecretIdentity, String newTrueIdentity, int newStrength){
+        db.editSuperhero(secretIdentity, newSecretIdentity, newTrueIdentity, newStrength);
+    }
+
+    public void removeSuperhero(String secretIdentity){
+        db.removeSuperhero(secretIdentity);
     }
 }
