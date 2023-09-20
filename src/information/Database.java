@@ -1,23 +1,22 @@
 package information;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Database {
     private ArrayList<Superhero> superheroes = new ArrayList<Superhero>();
 
-    //Add superhero - Crud
+    //Add a superhero - Crud
     public void addSuperhero(String secretIdentity, String trueIdentity, String superpower,
                              int yearCreated, String isHuman, int strength){
         superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated,
                 isHuman, strength));
     }
 
-    //Recieve all superheroes - cRud
+    //Receive all superheroes - cRud
     public ArrayList<Superhero> recieveSuperheroes(){
         return superheroes;
     }
 
-    //Recieve a specific superhero - cRud
+    //Receive a specific superhero - cRud
     public Superhero searchSuperhero(String name){
         //Foreach loop that searches if a superhero matches the search criteria
         for (Superhero superhero: superheroes) {
@@ -38,8 +37,7 @@ public class Database {
             }
         }
     }
-
-    //Remove supperhero - cruD
+    //Remove superhero - cruD
     public void removeSuperhero(String secretIdentity){
         Superhero found = null;
         for (Superhero superhero: superheroes) {
@@ -47,8 +45,8 @@ public class Database {
                 found = superhero;
             }
         }
-        if (found != null) superheroes.remove(found);
+        if (found != null){
+            superheroes.remove(found);
+        }
     }
-
-
 }
