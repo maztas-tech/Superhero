@@ -41,7 +41,7 @@ class DatabaseTest {
 
         superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength));
         superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength));
-        //Act - Hvordan scenen skal aktiveres.
+        //Act - Hvordan scenen skal aktiveres. Counting amount of objects
         int expectedSize = 2;
         int actualSize = superheroes.size();
 
