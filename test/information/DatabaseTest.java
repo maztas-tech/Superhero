@@ -4,22 +4,27 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DatabaseTest {
     private Database db;
+    private ArrayList<Superhero> superheroes = new ArrayList<Superhero>();
+
     @BeforeEach
     void setUp() {
         db = new Database();
-        db.addSuperhero("Superman", "Klark Kent", "Flying",
-                1940, "No", 400);
+        db.recieveSuperheroes().addAll(List.of(
+                new Superhero("Batman", "Bruce Wayne", "Fighting", 1943, "Yes", 200),
+                new Superhero("Catwoman", "Selina Kyle", "Burglary", 1950,"Yes" ,100)));
 
-        db.addSuperhero("The Flash", "Barry Allen", "Speed",
-                1994, "Yes", 300);
     }
 
     @AfterEach
     void tearDown() {
+
         db = null;
     }
 
@@ -27,13 +32,21 @@ class DatabaseTest {
     void addSuperhero() {
         //TODO Add superHero
         //Arrange - man sætter scenen
+        String secretIdentity = "Superman";
+        String trueIdentity = "Klark Kent";
+        String superpower = "Flying";
+        int yearCreated = 1940;
+        String isHuman = "No";
+        int strength = 400;
 
-
+        superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength));
+        superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength));
         //Act - Hvordan scenen skal aktiveres.
-
+        int expectedSize = 2;
+        int actualSize = superheroes.size();
 
         //Assertion
-        fail();
+        assertEquals(expectedSize, actualSize);
     }
 
     @Test
@@ -42,24 +55,32 @@ class DatabaseTest {
         //Arrange - man sætter scenen
 
 
+
         //Act - Hvordan scenen skal aktiveres.
 
 
+
         //Assertion
-        fail();
+
     }
 
     @Test
     void searchSuperhero() {
         //TODO add searchSuperhero
         //Arrange - man sætter scenen
-
+        String secretIdentity = "Superman";
+        String trueIdentity = "Klark Kent";
+        String superpower = "Flying";
+        int yearCreated = 1940;
+        String isHuman = "No";
+        int strength = 400;
 
         //Act - Hvordan scenen skal aktiveres.
-
+        db.addSuperhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength);
+        Superhero result = db.searchSuperhero(secretIdentity);
 
         //Assertion
-        fail();
+        assertEquals(result.getSecretIdentity(), secretIdentity);
     }
 
     @Test

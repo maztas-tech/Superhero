@@ -5,6 +5,7 @@ public class Superhero {
     private String trueIdentity;
     private String superpower;
     private int yearCreated;
+    //TODO Change this field into a boolean value
     private String isHuman;
     private int strength;
 
@@ -54,7 +55,7 @@ public class Superhero {
     public void setStrength (int strength){
         this.strength = strength;
     }
-
+    //TODO Put this text in pretty boxes and keep the green color
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();

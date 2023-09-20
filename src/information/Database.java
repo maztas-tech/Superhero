@@ -38,30 +38,7 @@ public class Database {
             }
         }
     }
-    /*public void editSuperhero(String name, Scanner input){
-        for (Superhero superhero: superheroes) {
-            if (superhero.getSecretIdentity().contains(name)){
-                System.out.print("Please type in the new secret identity: ");
-                String newSecretIdentity;
-                newSecretIdentity = input.nextLine();
-                System.out.println("New secret identity has been implemented!");
 
-                System.out.print("Please type in the new real identity: ");
-                String newTrueIdentity;
-                newTrueIdentity = input.nextLine();
-                System.out.println("New true identity has been implemented!");
-
-                System.out.print("Please type in the new strength value: ");
-                int newStrength;
-                newStrength = input.nextInt();
-                System.out.println("New strength has been implemented!");
-
-                superhero.setSecretIdentity(newSecretIdentity);
-                superhero.setTrueIdentity(newTrueIdentity);
-                superhero.setStrength(newStrength);
-            }
-        }
-    }*/
     //Remove supperhero - cruD
     public void removeSuperhero(String secretIdentity){
         Superhero found = null;
@@ -72,4 +49,6 @@ public class Database {
         }
         if (found != null) superheroes.remove(found);
     }
+
+
 }
