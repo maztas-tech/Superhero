@@ -1,7 +1,6 @@
 package information;
-
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class Controller {
     private Database db;
