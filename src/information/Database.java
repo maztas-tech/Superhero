@@ -49,4 +49,5 @@ public class Database {
             superheroes.remove(found);
         }
     }
+
 }

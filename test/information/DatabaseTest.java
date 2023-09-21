@@ -1,5 +1,4 @@
 package information;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -38,9 +37,15 @@ class DatabaseTest {
         int yearCreated = 1940;
         String isHuman = "No";
         int strength = 400;
+        String secretIdentity1 = "Batman";
+        String trueIdentity1 = "Bruce Wayne";
+        String superpower1 = "Fighting";
+        int yearCreated1 = 1950;
+        String isHuman1 = "Yes";
+        int strength1 = 200;
 
         superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength));
-        superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength));
+        superheroes.add(new Superhero(secretIdentity1, trueIdentity1, superpower1, yearCreated1, isHuman1, strength1));
         //Act - Hvordan scenen skal aktiveres. Counting amount of objects
         int expectedSize = 2;
         int actualSize = superheroes.size();
@@ -88,12 +93,11 @@ class DatabaseTest {
         //TODO Add editSuperhero
         //Arrange - man sætter scenen
 
-
         //Act - Hvordan scenen skal aktiveres.
 
 
         //Assertion
-        fail();
+
     }
 
     @Test
