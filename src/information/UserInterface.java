@@ -113,6 +113,8 @@ public class UserInterface {
                     secretIdentity = input.nextLine();
                     controller.removeSuperhero(secretIdentity);
                     System.out.println("Superhero has been removed");
+                    break;
+
                 default:
                     System.out.println("Ugyldigt valg. Prøv igen.");
             }
