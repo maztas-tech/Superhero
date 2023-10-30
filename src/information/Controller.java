@@ -12,7 +12,7 @@ public class Controller {
     }
     //Add superhero method - Crud
     public void addSuperhero(String secretIdentity, String trueIdentity, String superpower,
-                             int yearCreated, String isHuman, int strength){
+                             int yearCreated, boolean isHuman, int strength){
         db.addSuperhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength);
     }
 

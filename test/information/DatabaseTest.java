@@ -16,8 +16,8 @@ class DatabaseTest {
     void setUp() {
         db = new Database();
         db.recieveSuperheroes().addAll(List.of(
-                new Superhero("Batman", "Bruce Wayne", "Fighting", 1943, "Yes", 200),
-                new Superhero("Catwoman", "Selina Kyle", "Burglary", 1950,"Yes" ,100)));
+                new Superhero("Batman", "Bruce Wayne", "Fighting", 1943, true, 200),
+                new Superhero("Catwoman", "Selina Kyle", "Burglary", 1950,true ,100)));
 
     }
 
@@ -35,13 +35,13 @@ class DatabaseTest {
         String trueIdentity = "Klark Kent";
         String superpower = "Flying";
         int yearCreated = 1940;
-        String isHuman = "No";
+        boolean isHuman = false;
         int strength = 400;
         String secretIdentity1 = "Batman";
         String trueIdentity1 = "Bruce Wayne";
         String superpower1 = "Fighting";
         int yearCreated1 = 1950;
-        String isHuman1 = "Yes";
+        boolean isHuman1 = true;
         int strength1 = 200;
 
         superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength));
@@ -77,7 +77,7 @@ class DatabaseTest {
         String trueIdentity = "Klark Kent";
         String superpower = "Flying";
         int yearCreated = 1940;
-        String isHuman = "No";
+        boolean isHuman = false;
         int strength = 400;
 
         //Act - Hvordan scenen skal aktiveres.

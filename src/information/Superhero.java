@@ -6,12 +6,12 @@ public class Superhero {
     private String superpower;
     private int yearCreated;
     //TODO Change this field into a boolean value
-    private String isHuman;
+    private boolean isHuman;
     private int strength;
 
     //Constructor that creates superhero objects.
     public Superhero(String secretIdentity, String trueIdentity, String superpower,
-                     int yearCreated, String isHuman, int strength){
+                     int yearCreated, boolean isHuman, int strength){
         this.secretIdentity = secretIdentity;
         this.trueIdentity = trueIdentity;
         this.superpower = superpower;

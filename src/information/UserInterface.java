@@ -3,20 +3,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInterface {
-    String secretIdentity;
-    String trueIdentity;
-    String superpower;
-    int yearCreated;
-    String isHuman;
-    int strength;
+    Controller controller = new Controller();
+    Scanner input = new Scanner(System.in);
     public void startProgram(){
-        Controller controller = new Controller();
-        Scanner input = new Scanner(System.in);
+        String secretIdentity;
+        String trueIdentity;
+        String superpower;
+        int yearCreated = 0;
+        String humanOrNot;
+        boolean isHuman = false;
+        int strength = 0;
+
+
 
         controller.addSuperhero("Superman", "Klark Kent", "Flying",
-                1940, "No", 400);
+                1940, false, 400);
         controller.addSuperhero("Batman", "Bruce Wayne", "Money",
-                1945, "Yes", 200);
+                1945, true, 200);
 
 
 
@@ -28,7 +31,7 @@ public class UserInterface {
                     1. Create superhero
                     2. Show superhero
                     3. Find superhero
-                    4. Update superhero 
+                    4. Update superhero\s
                     5. Delete superhero
                     9. Close the program
                     """);
@@ -58,8 +61,20 @@ public class UserInterface {
                     }
                     input.nextLine(); // Consume the newline character
 
-                    System.out.print("Are you a human? ");
-                    isHuman = input.nextLine();
+                    System.out.print("Are you a human? Y/N");
+                    try {
+                        humanOrNot = input.nextLine();
+                        if (humanOrNot.equals("y")){
+                            isHuman = true;
+                        } else if (humanOrNot.equals("n")) {
+                            isHuman = false;
+                        }
+                    }catch (InputMismatchException ime){
+                        System.out.println("Must be a string!");
+                    }
+
+
+
 
                     System.out.print("What is your strength? ");
                     try{
@@ -120,5 +135,8 @@ public class UserInterface {
 
         }while (option != 9);
 
+
     }
+
+
 }

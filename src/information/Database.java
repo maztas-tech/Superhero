@@ -6,7 +6,7 @@ public class Database {
 
     //Add a superhero - Crud
     public void addSuperhero(String secretIdentity, String trueIdentity, String superpower,
-                             int yearCreated, String isHuman, int strength){
+                             int yearCreated, boolean isHuman, int strength){
         superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated,
                 isHuman, strength));
     }
