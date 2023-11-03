@@ -41,9 +41,15 @@ public class Superhero {
         return yearCreated;
     }
 
+    public boolean getIsHuman() {
+        return isHuman;
+    }
+
     public int getStrength(){
         return strength;
     }
+
+
 
     //Setter
     public void setSecretIdentity(String secretIdentity){

@@ -37,12 +37,12 @@ public class Controller {
     public boolean fileCreator(){
         return db.fileCreator();
     }
-    /*
+
     public boolean saveData(){
-        return db.
+        return db.saveData();
     }
 
-     */
+
 
 
 }

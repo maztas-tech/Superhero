@@ -13,7 +13,7 @@ public class UserInterface {
     boolean isRunning = true;
     Controller controller = new Controller();
     Scanner input = new Scanner(System.in);
-    
+
     public void startProgram(){
         controller.addSuperhero("Superman", "Klark Kent", "Flying",
                 1940, false, 400);
@@ -146,9 +146,10 @@ public class UserInterface {
     }
 
     private void exitProgram(){
+
         isRunning = false;
-        //Save data to file
-        //controller.
+        controller.saveData();
+
     }
 
 

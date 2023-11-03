@@ -59,13 +59,9 @@ public class Database {
     public boolean fileCreator(){
         return fileHandler.fileCreator();
     }
-    /*
+
     public boolean saveData(){
         return fileHandler.saveData(superheroes);
     }
-
-     */
-
-
 
 }
