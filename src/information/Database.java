@@ -1,14 +1,20 @@
 package information;
+import datasource.FileHandler;
+
 import java.util.ArrayList;
 
 public class Database {
     private ArrayList<Superhero> superheroes = new ArrayList<Superhero>();
+    private FileHandler fileHandler = new FileHandler();
+
+
 
     //Add a superhero - Crud
     public void addSuperhero(String secretIdentity, String trueIdentity, String superpower,
                              int yearCreated, boolean isHuman, int strength){
         superheroes.add(new Superhero(secretIdentity, trueIdentity, superpower, yearCreated,
                 isHuman, strength));
+
     }
 
     //Receive all superheroes - cRud
@@ -49,5 +55,17 @@ public class Database {
             superheroes.remove(found);
         }
     }
+
+    public boolean fileCreator(){
+        return fileHandler.fileCreator();
+    }
+    /*
+    public boolean saveData(){
+        return fileHandler.saveData(superheroes);
+    }
+
+     */
+
+
 
 }

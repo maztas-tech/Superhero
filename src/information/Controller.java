@@ -1,11 +1,11 @@
 package information;
+import datasource.FileHandler;
+
 import java.util.ArrayList;
 
 
 public class Controller {
     private Database db;
-
-    private ArrayList<Superhero> superheroes = new ArrayList<Superhero>();
 
     public Controller(){
         db = new Database();
@@ -33,4 +33,16 @@ public class Controller {
     public void removeSuperhero(String secretIdentity){
         db.removeSuperhero(secretIdentity);
     }
+
+    public boolean fileCreator(){
+        return db.fileCreator();
+    }
+    /*
+    public boolean saveData(){
+        return db.
+    }
+
+     */
+
+
 }
