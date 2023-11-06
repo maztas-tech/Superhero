@@ -15,10 +15,7 @@ public class UserInterface {
     Scanner input = new Scanner(System.in);
 
     public void startProgram(){
-        controller.addSuperhero("Superman", "Klark Kent", "Flying",
-                1940, false, 400);
-        controller.addSuperhero("Batman", "Bruce Wayne", "Money",
-                1945, true, 200);
+
         int option = 0;
         do {
             welcome();

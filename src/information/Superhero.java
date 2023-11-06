@@ -65,7 +65,7 @@ public class Superhero {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("\nListe af superhelte ");
+        stringBuilder.append("\nList of superheroes ");
         stringBuilder.append("\nSecret identity: ");
         stringBuilder.append("\u001B[32m" + secretIdentity + "\u001B[0m");
         stringBuilder.append("\nTrue identity: ");
