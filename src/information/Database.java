@@ -1,6 +1,7 @@
 package information;
 import datasource.FileHandler;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Database {
@@ -63,5 +64,11 @@ public class Database {
     public boolean saveData(){
         return fileHandler.saveData(superheroes);
     }
+
+    public void loadSuperheroFile(){
+        fileHandler.loadSuperheroFile();
+    }
+
+
 
 }

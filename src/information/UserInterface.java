@@ -36,6 +36,7 @@ public class UserInterface {
                 case 4 -> updateSuperhero();
                 case 5 -> deleteSuperhero();
                 case 6 -> createNewFile();
+                case 7 -> loadSuperheroFile();
                 case 9 -> exitProgram();
                 default -> System.out.println("Ugyldigt valg. Prøv igen.");
             }
@@ -53,6 +54,7 @@ public class UserInterface {
                     4. Update superhero\s
                     5. Delete superhero
                     6. Create a new file
+                    7. load file
                     9. Close the program
                     """);
     }
@@ -97,11 +99,13 @@ public class UserInterface {
         System.out.println("Your superhero has been added!");
         controller.addSuperhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength);
 
+
     }
 
     private void recieveSuperheroes(){
         System.out.println(controller.recieveSuperheroes());
         input.nextLine();
+        System.out.println("show superheroFile");
     }
     private void findSuperhero(){
         String find;
@@ -145,11 +149,14 @@ public class UserInterface {
         }
     }
 
+    public void loadSuperheroFile(){
+        controller.loadSuperheroFile();
+    }
+
     private void exitProgram(){
 
         isRunning = false;
         controller.saveData();
-
     }
 
 

@@ -1,6 +1,7 @@
 package information;
 import datasource.FileHandler;
 
+import java.io.File;
 import java.util.ArrayList;
 
 
@@ -42,7 +43,8 @@ public class Controller {
         return db.saveData();
     }
 
-
-
+    public void loadSuperheroFile(){
+        db.loadSuperheroFile();
+    }
 
 }
