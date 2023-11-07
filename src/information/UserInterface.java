@@ -15,7 +15,7 @@ public class UserInterface {
     Scanner input = new Scanner(System.in);
 
     public void startProgram(){
-
+        loadSuperheroFile();
         int option = 0;
         do {
             welcome();
@@ -50,8 +50,6 @@ public class UserInterface {
                     3. Find superhero
                     4. Update superhero\s
                     5. Delete superhero
-                    6. Create a new file
-                    7. load file
                     9. Close the program
                     """);
     }
@@ -151,7 +149,6 @@ public class UserInterface {
     }
 
     private void exitProgram(){
-
         isRunning = false;
         controller.saveData();
     }

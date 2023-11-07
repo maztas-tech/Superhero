@@ -66,7 +66,7 @@ public class Database {
     }
 
     public void loadSuperheroFile(){
-        fileHandler.loadSuperheroFile();
+       superheroes = fileHandler.loadSuperheroFile();
     }
 
 

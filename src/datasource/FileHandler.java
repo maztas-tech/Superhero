@@ -9,42 +9,40 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileHandler {
-   private File superheroFile;
-   private final String DELIMITER = ";";
+    private File superheroFile;
+    private final String DELIMITER = ";";
 
-    public FileHandler(){
-        this.superheroFile= new File("superhero.csv");
+    public FileHandler() {
+        superheroFile = new File("superhero.csv");
     }
 
     public boolean fileCreator() {
 
         try {
-            if (superheroFile.createNewFile()){
+            if (superheroFile.createNewFile()) {
                 return true;
-            }
-            else {
+            } else {
                 return false;
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return false;
     }
 
 
-    public boolean saveData(ArrayList<Superhero> superheroes){
-        try{
+    public boolean saveData(ArrayList<Superhero> superheroes) {
+        try {
             PrintStream output = new PrintStream(superheroFile);
-            for (Superhero superhero: superheroes) {
+            for (Superhero superhero : superheroes) {
                 //lave en csv string for hver superhero
                 String superheroCSV = superheroToCSV(superhero);
                 output.println(superheroCSV);
                 // skriv string til filen
             }
             output.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return true;
@@ -52,16 +50,17 @@ public class FileHandler {
 
     private String superheroToCSV(Superhero superhero) {
         return superhero.getSecretIdentity() + DELIMITER + superhero.getTrueIdentity() + DELIMITER + superhero.getSuperpower() + DELIMITER +
-                    superhero.getYearCreated() + DELIMITER + superhero.getIsHuman() + DELIMITER + superhero.getStrength();}
+                superhero.getYearCreated() + DELIMITER + superhero.getIsHuman() + DELIMITER + superhero.getStrength();
+    }
 
-    public void loadSuperheroFile() {
-    ArrayList<Superhero>superheroes = new ArrayList<>();
-            try {
-                Scanner sc = new Scanner(superheroFile);
-                while (sc.hasNextLine()) {
-                    String linje = sc.nextLine();
-                    String[] AntalAtributes = linje.split(";");
-                    if (AntalAtributes.length == 6){
+    public ArrayList loadSuperheroFile() {
+        ArrayList<Superhero> superheroes = new ArrayList<>();
+        try {
+            Scanner sc = new Scanner(superheroFile);
+            while (sc.hasNextLine()) {
+                String linje = sc.nextLine();
+                String[] AntalAtributes = linje.split(";");
+                if (AntalAtributes.length == 6) {
                     String secretIdentity = AntalAtributes[0].trim();
                     String trueIdentity = AntalAtributes[1].trim();
                     String superpower = AntalAtributes[2].trim();
@@ -70,21 +69,18 @@ public class FileHandler {
                     int strength = Integer.parseInt(AntalAtributes[5].trim());
 
                     Superhero superhero = new Superhero(secretIdentity, trueIdentity,
-                               superpower, yearCreated, isHuman, strength);
+                            superpower, yearCreated, isHuman, strength);
 
                     superheroes.add(superhero);
-                }else {
-                        System.out.println("FEJL");
-                    }
+                } else {
+                    System.out.println("FEJL");
                 }
-
-            }catch (IOException ioe){
-               ioe.printStackTrace();
             }
 
-           for (Superhero superhero: superheroes) {
-               System.out.println(superhero);
-           }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+        return superheroes;
 
-}
     }
+}
