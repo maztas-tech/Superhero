@@ -65,8 +65,8 @@ public class Database {
         return fileHandler.saveData(superheroes);
     }
 
-    public void loadSuperheroFile(){
-       superheroes = fileHandler.loadSuperheroFile();
+    public ArrayList<Superhero> loadSuperheroFile(){
+       return superheroes = fileHandler.loadSuperheroFile();
     }
 
 

@@ -1,6 +1,9 @@
 package information;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import comparator.SecretIdentityComparator;
+import comparator.TrueIdentityComparator;
+
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class UserInterface {
     String secretIdentity;
@@ -32,8 +35,7 @@ public class UserInterface {
                 case 3 -> findSuperhero();
                 case 4 -> updateSuperhero();
                 case 5 -> deleteSuperhero();
-                case 6 -> createNewFile();
-                case 7 -> loadSuperheroFile();
+                case 6 -> sortSuperhero();
                 case 9 -> exitProgram();
                 default -> System.out.println("Ugyldigt valg. Prøv igen.");
             }
@@ -50,6 +52,7 @@ public class UserInterface {
                     3. Find superhero
                     4. Update superhero\s
                     5. Delete superhero
+                    6. Show superheroes sorted
                     9. Close the program
                     """);
     }
@@ -93,8 +96,6 @@ public class UserInterface {
 
         System.out.println("Your superhero has been added!");
         controller.addSuperhero(secretIdentity, trueIdentity, superpower, yearCreated, isHuman, strength);
-
-
     }
 
     private void recieveSuperheroes(){
@@ -135,6 +136,32 @@ public class UserInterface {
         controller.removeSuperhero(secretIdentity);
         System.out.println("Superhero has been removed");
     }
+    private void sortSuperhero(){
+        int userSort = 0;
+        do {
+            System.out.println("""
+                    Pick a sort method
+                    1: Sort by secret identity
+                    2: sort by true identity""");
+            userSort = input.nextInt();
+            switch (userSort){
+                case 1:
+                    System.out.println("Sorting by secret identities");
+                   Collections.sort(controller.loadSuperheroFile(), new SecretIdentityComparator());
+                    for (Superhero superhero: controller.loadSuperheroFile()) {
+                        System.out.println(superhero);
+                    }
+                    break;
+                case 2:
+                    System.out.println("sort by true identities");
+                    Collections.sort(controller.loadSuperheroFile(),new TrueIdentityComparator());
+                    for (Superhero superhero: controller.loadSuperheroFile()){
+                        System.out.println(superhero);
+                    }
+                    break;
+            }
+        }while (userSort != 9);
+    }
     private void createNewFile(){
         if (!controller.fileCreator()){
             System.out.println("File already exists!");
@@ -143,11 +170,9 @@ public class UserInterface {
             System.out.println("File has been created!");
         }
     }
-
     public void loadSuperheroFile(){
         controller.loadSuperheroFile();
     }
-
     private void exitProgram(){
         isRunning = false;
         controller.saveData();

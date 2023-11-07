@@ -43,8 +43,8 @@ public class Controller {
         return db.saveData();
     }
 
-    public void loadSuperheroFile(){
-        db.loadSuperheroFile();
+    public ArrayList<Superhero> loadSuperheroFile(){
+        return db.loadSuperheroFile();
     }
 
 }
