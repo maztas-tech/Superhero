@@ -1,8 +1,5 @@
 package information;
-import comparator.SecretIdentityComparator;
-import comparator.SuperpowerComparator;
-import comparator.TrueIdentityComparator;
-import comparator.YearCreatedComparator;
+import comparator.*;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -13,7 +10,7 @@ public class UserInterface {
     String superpower;
     int yearCreated = 0;
     String humanOrNot;
-    boolean isHuman = false;
+    boolean isHuman;
     int strength = 0;
     boolean isRunning = true;
     Controller controller = new Controller();
@@ -177,6 +174,20 @@ public class UserInterface {
                     System.out.println("Sort by year created");
                     Collections.sort(superheroArrayList,new YearCreatedComparator());
                     for (Superhero superhero: superheroArrayList){
+                        System.out.println(superhero);
+                    }
+                    break;
+                case 5:
+                    System.out.println("sort by isHuman");
+                    Collections.sort(superheroArrayList,new IsHumanComparator());
+                    for (Superhero superhero: superheroArrayList){
+                        System.out.println(superhero);
+                    }
+                    break;
+                case 6:
+                    System.out.println("sort by strength");
+                    Collections.sort(superheroArrayList,new StrengthComparator());
+                    for (Superhero superhero:superheroArrayList){
                         System.out.println(superhero);
                     }
                     break;

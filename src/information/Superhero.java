@@ -50,7 +50,6 @@ public class Superhero {
     }
 
 
-
     //Setter
     public void setSecretIdentity(String secretIdentity){
         this.secretIdentity = secretIdentity;

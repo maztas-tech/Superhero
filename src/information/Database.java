@@ -66,9 +66,11 @@ public class Database {
     }
 
     public ArrayList<Superhero> loadSuperheroFile(){
-       return superheroes = fileHandler.loadSuperheroFile();
+        return superheroes=fileHandler.loadSuperheroFile();
     }
 
-
+    public ArrayList getSuperheroArraylist(){
+        return fileHandler.getSuperheroArraylist();
+    }
 
 }

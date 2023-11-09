@@ -1,5 +1,6 @@
 package datasource;
 
+import information.Database;
 import information.Superhero;
 
 import java.io.File;
@@ -8,10 +9,11 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class FileHandler {
     private File superheroFile;
     private final String DELIMITER = ";";
-
+    private ArrayList<Superhero> superheroes = new ArrayList<>();
     public FileHandler() {
         superheroFile = new File("superhero.csv");
     }
@@ -82,5 +84,8 @@ public class FileHandler {
         }
         return superheroes;
 
+    }
+    public ArrayList getSuperheroArraylist(){
+        return superheroes;
     }
 }
