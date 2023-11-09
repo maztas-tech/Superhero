@@ -7,10 +7,17 @@ import java.util.ArrayList;
 
 public class Controller {
     private Database db;
+    private ArrayList<Superhero> superheroCSVList;
 
     public Controller(){
         db = new Database();
+        this.superheroCSVList  = new ArrayList<>();
     }
+
+    public ArrayList<Superhero> getSuperheroCSVList() {
+        return superheroCSVList;
+    }
+
     //Add superhero method - Crud
     public void addSuperhero(String secretIdentity, String trueIdentity, String superpower,
                              int yearCreated, boolean isHuman, int strength){
@@ -43,8 +50,8 @@ public class Controller {
         return db.saveData();
     }
 
-    public ArrayList<Superhero> loadSuperheroFile(){
-        return db.loadSuperheroFile();
+    public void loadSuperheroFile(){
+       superheroCSVList = db.loadSuperheroFile();
     }
 
 }

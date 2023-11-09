@@ -7,7 +7,7 @@ public class TrueIdentityComparator implements Comparator<Superhero> {
 
     @Override
     public int compare(Superhero data1, Superhero data2){
-        return data1.getTrueIdentity().compareTo(data2.getTrueIdentity());
+        return data1.getTrueIdentity().toUpperCase().compareTo(data2.getTrueIdentity().toUpperCase());
     }
 
 }

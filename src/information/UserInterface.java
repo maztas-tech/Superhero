@@ -1,6 +1,8 @@
 package information;
 import comparator.SecretIdentityComparator;
+import comparator.SuperpowerComparator;
 import comparator.TrueIdentityComparator;
+import comparator.YearCreatedComparator;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -138,27 +140,47 @@ public class UserInterface {
     }
     private void sortSuperhero(){
         int userSort = 0;
+        ArrayList<Superhero> superheroArrayList = controller.getSuperheroCSVList();
         do {
             System.out.println("""
                     Pick a sort method
                     1: Sort by secret identity
-                    2: sort by true identity""");
+                    2: Sort by true identity
+                    3: Sort by superpower
+                    4: Sort by year created
+                    5: Sort by is human or not
+                    6: Sort by strength""");
             userSort = input.nextInt();
             switch (userSort){
                 case 1:
                     System.out.println("Sorting by secret identities");
-                   Collections.sort(controller.loadSuperheroFile(), new SecretIdentityComparator());
-                    for (Superhero superhero: controller.loadSuperheroFile()) {
+                    Collections.sort(superheroArrayList, new SecretIdentityComparator());
+                    for (Superhero superhero: superheroArrayList) {
                         System.out.println(superhero);
                     }
                     break;
                 case 2:
                     System.out.println("sort by true identities");
-                    Collections.sort(controller.loadSuperheroFile(),new TrueIdentityComparator());
-                    for (Superhero superhero: controller.loadSuperheroFile()){
+                    Collections.sort(superheroArrayList,new TrueIdentityComparator());
+                    for (Superhero superhero: superheroArrayList){
                         System.out.println(superhero);
                     }
                     break;
+                case 3:
+                    System.out.println("Sort by superpower");
+                    Collections.sort(superheroArrayList,new SuperpowerComparator());
+                    for (Superhero superhero: superheroArrayList){
+                        System.out.println(superhero);
+                    }
+                    break;
+                case 4:
+                    System.out.println("Sort by year created");
+                    Collections.sort(superheroArrayList,new YearCreatedComparator());
+                    for (Superhero superhero: superheroArrayList){
+                        System.out.println(superhero);
+                    }
+                    break;
+
             }
         }while (userSort != 9);
     }
