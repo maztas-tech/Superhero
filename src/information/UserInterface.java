@@ -1,7 +1,6 @@
 package information;
 import comparator.*;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class UserInterface {
@@ -137,6 +136,7 @@ public class UserInterface {
     }
     private void sortSuperhero(){
         int userSort = 0;
+
         ArrayList<Superhero> superheroArrayList = controller.getSuperheroCSVList();
         do {
             System.out.println("""
@@ -146,7 +146,8 @@ public class UserInterface {
                     3: Sort by superpower
                     4: Sort by year created
                     5: Sort by is human or not
-                    6: Sort by strength""");
+                    6: Sort by strength
+                    7: Sort by primary and secondary attributes""");
             userSort = input.nextInt();
             switch (userSort){
                 case 1:
@@ -191,6 +192,51 @@ public class UserInterface {
                         System.out.println(superhero);
                     }
                     break;
+                case 7:
+                    String primaryComparatorName;
+                    String secondaryComparatorName;
+                    System.out.println("Whats your primary comparator?");
+                    Comparator comparator = null;
+                    Comparator comparator2 = null;
+                    input.nextLine();
+                    primaryComparatorName = input.nextLine();
+                    if (primaryComparatorName.equals("strength")){
+                        comparator = new StrengthComparator();
+                    } else if (primaryComparatorName.equals("year created")){
+                        comparator = new YearCreatedComparator();
+                    } else if (primaryComparatorName.equals("secret identity")) {
+                        comparator = new SecretIdentityComparator();
+                    } else if (primaryComparatorName.equals("true identity")) {
+                        comparator = new TrueIdentityComparator();
+                    } else if (primaryComparatorName.equals("is human")) {
+                        comparator = new IsHumanComparator();
+                    } else if (primaryComparatorName.equals("super power")) {
+                        comparator = new SuperpowerComparator();
+                    }
+                    input.nextLine();
+                    System.out.println("Whats your secondary comparator?");
+                    secondaryComparatorName = input.nextLine();
+
+                    if (secondaryComparatorName.equals("strength")){
+                        comparator2 = new StrengthComparator();
+                    } else if (secondaryComparatorName.equals("year created")){
+                        comparator2 = new YearCreatedComparator();
+                    } else if (secondaryComparatorName.equals("secret identity")) {
+                        comparator2 = new SecretIdentityComparator();
+                    } else if (secondaryComparatorName.equals("true identity")) {
+                        comparator2 = new TrueIdentityComparator();
+                    } else if (secondaryComparatorName.equals("is human")) {
+                        comparator2 = new IsHumanComparator();
+                    } else if (secondaryComparatorName.equals("super power")) {
+                        comparator2 = new SuperpowerComparator();
+                    }
+                    //input.nextLine();
+
+
+                    Collections.sort(superheroArrayList, comparator.thenComparing(comparator2));
+                    for (Superhero superhero:superheroArrayList){
+                        System.out.println(superhero);
+                    }
 
             }
         }while (userSort != 9);
